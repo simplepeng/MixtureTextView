@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
+        android:lineSpacingMultiplier="2.0"
         android:text="@string/text1"
         android:textColor="#ff5d75"
         android:textSize="14sp">

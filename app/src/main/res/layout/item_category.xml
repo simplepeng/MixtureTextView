@@ -1,14 +1,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="128dp"
-    >
+    android:layout_height="200dp">
 
     <me.simple.view.MixtureTextView
         android:id="@+id/id_mixtureTextview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f4f3ff"
+        android:lineSpacingExtra="9dp"
+        android:lineSpacingMultiplier="1.0"
         android:padding="16dp"
         android:text="@string/text1"
         android:textColor="#ff5d75"
@@ -27,4 +28,10 @@
             android:src="@drawable/icon" />
     </me.simple.view.MixtureTextView>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="9dp"
+        android:lineSpacingMultiplier="1.5"
+        android:visibility="gone" />
 </RelativeLayout>
