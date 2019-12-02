@@ -30,7 +30,7 @@ import java.util.Set;
  */
 public class MixtureTextView extends RelativeLayout {
 
-    private Layout layout = null;
+    private Layout mLayout = null;
 
     /**
      * 行高
@@ -137,9 +137,9 @@ public class MixtureTextView extends RelativeLayout {
     }
 
     private void cacuLineHeight() {
-        layout = new StaticLayout("爱我中华", mTextPaint, 0, Layout.Alignment.ALIGN_NORMAL,
+        mLayout = new StaticLayout("爱我中华", mTextPaint, 0, Layout.Alignment.ALIGN_NORMAL,
                 mLineSpacingMultiplier, mLineSpacingExtra, false);
-        mLineHeight = layout.getLineBottom(0) - layout.getLineTop(0);
+        mLineHeight = mLayout.getLineBottom(0) - mLayout.getLineTop(0);
     }
 
 
@@ -177,17 +177,17 @@ public class MixtureTextView extends RelativeLayout {
             Rect r = rs.get(0);
             int rectWidth = r.width();
             int rectHeight = r.height();
-            layout = generateLayout(mText.substring(start), rectWidth);
+            mLayout = generateLayout(mText.substring(start), rectWidth);
             int lineCount = rectHeight / lineHeight;
-            lineCount = layout.getLineCount() < lineCount ? layout.getLineCount() : lineCount;
+            lineCount = mLayout.getLineCount() < lineCount ? mLayout.getLineCount() : lineCount;
             if (!kidding) {
                 canvas.save();
                 canvas.translate(r.left, r.top);
-                canvas.clipRect(0, 0, r.width(), layout.getLineBottom(lineCount - 1) - layout.getLineTop(0));
-                layout.draw(canvas);
+                canvas.clipRect(0, 0, r.width(), mLayout.getLineBottom(lineCount - 1) - mLayout.getLineTop(0));
+                mLayout.draw(canvas);
                 canvas.restore();
             }
-            start += layout.getLineEnd(lineCount - 1);
+            start += mLayout.getLineEnd(lineCount - 1);
             lineSum += lineCount;
             if (start >= fullSize) {
                 break;
@@ -404,6 +404,29 @@ public class MixtureTextView extends RelativeLayout {
 
     public void setTextSize(int pxSize) {
         setTextSize(TypedValue.COMPLEX_UNIT_PX, pxSize);
+    }
+
+    /**
+     * Sets line spacing for this TextView.  Each line other than the last line will have its height
+     * multiplied by {@code mult} and have {@code add} added to it.
+     *
+     * @param add  The value in pixels that should be added to each line other than the last line.
+     *             This will be applied after the multiplier
+     * @param mult The value by which each line height other than the last line will be multiplied
+     *             by
+     * @attr ref android.R.styleable#TextView_lineSpacingExtra
+     * @attr ref android.R.styleable#TextView_lineSpacingMultiplier
+     */
+    public void setLineSpacing(float add, float mult) {
+        if (mLineSpacingExtra != add || mLineSpacingMultiplier != mult) {
+            mLineSpacingExtra = add;
+            mLineSpacingMultiplier = mult;
+
+            if (mLayout != null) {
+                requestLayout();
+                invalidate();
+            }
+        }
     }
 
     /**
