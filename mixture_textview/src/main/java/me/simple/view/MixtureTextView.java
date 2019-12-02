@@ -1,4 +1,4 @@
-package com.zhy.view;
+package me.simple.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

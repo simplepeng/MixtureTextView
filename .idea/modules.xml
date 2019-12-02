@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MixtureTextView.iml" filepath="$PROJECT_DIR$/MixtureTextView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mixture_textview/mixture_textview.iml" filepath="$PROJECT_DIR$/mixture_textview/mixture_textview.iml" />
     </modules>
   </component>
 </project>
