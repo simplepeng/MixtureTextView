@@ -6,7 +6,6 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import me.simple.view.MixtureTextView;
 
 public class ArticleActivity extends AppCompatActivity
 {

@@ -1,9 +1,17 @@
 # MixtureTextView
 支持Android图文混排、文字环绕图片等效果
 
-
+新增：`lineSpacingExtra`，`lineSpacingMultiplier`
 
 ## 效果图
+
+* `lineSpacingExtra`
+
+<img src="lineSpacingExtra.png" width="360px"/>
+
+* `lineSpacingMultiplier`
+
+<img src="lineSpacingMultiplier.png" width="360px"/>
 
 * 一般的展示
 

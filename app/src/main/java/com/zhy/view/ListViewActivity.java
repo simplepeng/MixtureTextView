@@ -11,7 +11,6 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import me.simple.view.MixtureTextView;
 
 public class ListViewActivity extends AppCompatActivity
 {
