@@ -43,6 +43,8 @@ mixtureTextView.
 	setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);//设置字体大小
 mixtureTextView.
 	setText(getString(R.string.text1));//设置文本
+//设置行间距
+mixtureTextView.setLineSpacing(float add, float mult)
 ```
 
 * 布局文件中通过属性设置
@@ -52,6 +54,8 @@ mixtureTextView.
 	android:text="@string/text2"
 	android:textColor="#ff5d75"
 	android:textSize="14sp"
+  android:lineSpacingExtra="9dp"
+  android:lineSpacingMultiplier="1.5"
 	...其他属性
 	>
 </com.zhy.view.MixtureTextView>

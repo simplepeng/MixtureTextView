@@ -9,7 +9,6 @@
         android:layout_height="match_parent"
         android:background="#f4f3ff"
         android:lineSpacingExtra="9dp"
-        android:="1.0"
         android:padding="16dp"
         android:text="@string/text1"
         android:textColor="#ff5d75"
